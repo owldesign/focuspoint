@@ -15,4 +15,4 @@ To install focuspoint, follow these steps:
 4. The plugin folder should be named `focuspoint` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
 5. Currently only supports css background images (no <img> tag focuspoints, but will add later).
 
-focuspoint works on Craft 2.4.x and Craft 2.5.x.
+focuspoint works on Craft Craft 2.5.x.
