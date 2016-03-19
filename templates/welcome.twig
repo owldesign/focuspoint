@@ -1,0 +1,45 @@
+
+{% extends '_layouts/cp' %}
+{% set title = 'Welcome to Focuspoint!' %}
+{% set bodyClass = 'fp-welcome' %}
+
+{% includeCssResource "focuspoint/css/focuspoint.css" %}
+
+{% set docsUrl = "https://github.com/owldesign/focuspoint/blob/master/README.md" %}
+
+{% set content %}
+  <div style="text-align:center; margin:0 auto; padding: 5% 10%;">
+    <div class="fp-logo"><img src="{{ resourceUrl('focuspoint/icon.svg') }}" width="100%" height="100%" /></div>
+    <h2>Thanks for using Focuspoint!</h2>
+    <hr />
+    <h2>Usage</h2>
+    <p>1. Install plugin</p>
+    <p>2. Create Focuspoint field.</p>
+    <img src="{{ resourceUrl('focuspoint/images/createcustomfield.gif') }}" width="100%" height="100%" />
+    <p>3. Add field to your assets</p>
+    <img src="{{ resourceUrl('focuspoint/images/addfieldtoassets.gif') }}" width="100%" height="100%" />
+    <p>4. Upload asset via Assets link in sidebar or in your entries and double tap thumbnail to make adjustments.</p>
+    <img src="{{ resourceUrl('focuspoint/images/uplaodasset.gif') }}" width="100%" height="100%" />
+    <p>5. Done! Now in your front-end template you can get your focuspoint field handle to get background position.</p>
+    <hr />
+    <h2>Front-End Implementation</h2>
+    <p>Create new custom field for assets fieldtype and add it to any of your sections (for example I'll add asset upload field to my home page single section)</p>
+
+    <p>Going off this example we will be using "photoFocalPoint" as the focuspoint handle we created in step. Create a new custom field for your entry template.</p>
+    <p>Add any photo to your entry and hit save.</p>
+    <p>In your front-end template use whatever code you need to get the asset object. Example: <code>entry.selectPhoto.first()</code> where selectPhot is the custom field handle you created for your entry template.</p> 
+    <p>Using that example code to get your focuspoint data use <code>getContent().photoFocalPoint</code></p>
+    <p>Full would looke similar to this, depending on your custom field handles... <code>entry.selectPhoto.first().getContent().photoFocalPoint</code></p>
+    <p>That will output <code>background-position: 43% 42%;</code> or whatever coordinates you selected for your focal point.</p>
+    <h2>Good Luck! Please ask questions, I'm in Craft CMS slack room so pm me if anything.</h2>
+    <img src="{{ resourceUrl('focuspoint/images/finaldemo.gif') }}" width="100%" height="100%" />
+
+  </div>
+
+  <hr />
+
+  <div style="text-align:center; margin:0 auto; padding: 0;">
+    <p class="instructions">Javascript built by <a href="https://github.com/jonom/jquery-focuspoint" target="_blank">jonom</a></p>
+    <p class="instructions">Logo by <a href="https://thenounproject.com/term/focus/127720/" target="_blank">jonom</a></p>
+  </div>
+{% endset %}
