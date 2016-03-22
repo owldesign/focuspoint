@@ -20,7 +20,7 @@ class FocuspointFieldType extends BaseFieldType
 
   public function defineContentAttribute()
   {
-    return AttributeType::String;
+    return AttributeType::Mixed;
   }
 
   public function getInputHtml($name, $value)

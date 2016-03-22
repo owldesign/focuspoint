@@ -21,6 +21,13 @@
       $dataAttrInput = $('.helper-tool-data-attr');
       $cssAttrInput = $('.focuspointCss3Background');
       $helperToolImage = $('.helper-tool-img');
+
+      console.log($cssAttrInput.val());
+
+      $('.reticle').css({ 
+        'top': '27%',
+        'left': '81%'
+      });
     })();
     
     $(document).on('click', '.target-overlay', function(e) {
