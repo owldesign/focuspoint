@@ -16,7 +16,7 @@ class FocuspointService extends BaseApplicationComponent
   public function getDefaultValues(FocuspointFieldType $field)
   {
     $element    = $field->element;
-    $image      = $element->getUrl('medium');
+    $image      = $element->getUrl();
     $variables  = array('image' => $image);
 
     return $variables;
