@@ -22,11 +22,14 @@
       $cssAttrInput = $('.focuspointCss3Background');
       $helperToolImage = $('.helper-tool-img');
 
-      console.log($cssAttrInput.val());
+      savedBackgroundSize = $cssAttrInput.val();
+      var numbers = savedBackgroundSize.match(/[0-9]+/g).map(function(n) {
+        return +(n);
+      });
 
       $('.reticle').css({ 
-        'top': '27%',
-        'left': '81%'
+        'top': numbers[1]+'%',
+        'left': numbers[0]+'%'
       });
     })();
     
