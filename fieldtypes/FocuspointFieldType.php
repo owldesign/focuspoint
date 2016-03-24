@@ -25,11 +25,6 @@ class FocuspointFieldType extends BaseFieldType
 
   public function getInputHtml($name, $value)
   {
-    craft()->templates->includeCssResource('focuspoint/css/fields/focuspoint.css');
-    craft()->templates->includeJsResource('focuspoint/js/focuspoint.min.js');
-    craft()->templates->includeJsResource('focuspoint/js/focuspoint.js');
-    craft()->templates->includeJsResource('focuspoint/js/fields/focuspoint.js');
-
     return craft()->templates->render('focuspoint/fields/focuspoint', array(
       'id'        => craft()->templates->formatInputId($name),
       'name'      => $name,

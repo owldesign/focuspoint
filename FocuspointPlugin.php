@@ -13,6 +13,15 @@ namespace Craft;
 
 class FocuspointPlugin extends BasePlugin
 {
+  public function init()
+  {
+    if (craft()->request->isCpRequest() && craft()->userSession->isLoggedIn()) {
+      craft()->templates->includeCssResource('focuspoint/css/fields/focuspoint.css');
+      craft()->templates->includeJsResource('focuspoint/js/focuspoint.min.js');
+      craft()->templates->includeJsResource('focuspoint/js/focuspoint.js');
+      craft()->templates->includeJsResource('focuspoint/js/fields/focuspoint.js');
+    }
+  }
   public function getName()
   {
     return Craft::t('Focuspoint');

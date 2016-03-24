@@ -1,9 +1,5 @@
-
-// Gets focus point coordinates from an image - adapt to suit your needs.
-
 (function($) {
   $(document).ready(function() {
-    
     var defaultImage;
     var $dataAttrInput;
     var $cssAttrInput;
@@ -21,16 +17,6 @@
       $dataAttrInput = $('.helper-tool-data-attr');
       $cssAttrInput = $('.focuspointCss3Background');
       $helperToolImage = $('.helper-tool-img');
-
-      savedBackgroundSize = $cssAttrInput.val();
-      var numbers = savedBackgroundSize.match(/[0-9]+/g).map(function(n) {
-        return +(n);
-      });
-
-      $('.reticle').css({ 
-        'top': numbers[1]+'%',
-        'left': numbers[0]+'%'
-      });
     })();
     
     $(document).on('click', '.target-overlay', function(e) {
@@ -58,7 +44,5 @@
         'left':percentageX+'%'
       });
     });
-    
-    
   });
 }(jQuery));

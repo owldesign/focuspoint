@@ -1,3 +1,4 @@
+
 (function($){
 
 Craft.FocuspointInput = Garnish.Base.extend(
@@ -23,6 +24,18 @@ Craft.FocuspointInput = Garnish.Base.extend(
       fieldId: this.fieldId,
       elementId: this.elementId
     };
+
+    numbers = ['50','50'];
+    fieldValue = this.$field.find('.focuspointCss3Background').val();
+    if (fieldValue) {
+      numbers = fieldValue.match(/[0-9]+/g).map(function(n) {
+        return +(n);
+      });
+    };
+    $('.reticle').css({ 
+      'top': numbers[1]+'%',
+      'left': numbers[0]+'%'
+    });
 
     Craft.postActionRequest('focuspoint/getDefaultValues', params, $.proxy(function(response, textStatus)
     {
