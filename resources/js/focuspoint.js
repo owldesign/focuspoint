@@ -14,8 +14,8 @@
       }; 
 
     (function() {
-      $dataAttrInput = $('.helper-tool-data-attr');
-      $cssAttrInput = $('.focuspointCss3Background');
+      $dataAttrInput = $('.focuspointBackground');
+      $cssAttrInput = $('.focuspointBackground');
       $helperToolImage = $('.helper-tool-img');
     })();
     
@@ -30,13 +30,26 @@
       var focusY = (offsetY/imageH - .5)*-2;
       focusPointAttr.x = focusX;
       focusPointAttr.y = focusY;
+      focusPointAttr.w = $(this).width();  
+      focusPointAttr.h = $(this).height();
 
       //Calculate CSS Percentages
       var percentageX = (offsetX/imageW)*100;
       var percentageY = (offsetY/imageH)*100;
       var backgroundPosition = percentageX.toFixed(0) + '% ' + percentageY.toFixed(0) + '%';
       var backgroundPositionCSS = 'background-position: ' + backgroundPosition + ';';
-      $('.focuspointCss3Background').val(backgroundPositionCSS);
+      $('.focuspointBackground').val(backgroundPositionCSS);
+
+      //Calculate JS Data Attributes
+      // var inlinePositionJs = 'background-position: ' + backgroundPosition + ';';
+      // $('.focuspointJsInline').val(inlinePositionJs);
+      printDataAttr();
+      // $focusPointContainers.attr({
+      //   'data-focus-x':focusPointAttr.x,
+      //   'data-focus-y':focusPointAttr.y,
+      //   'data-image-w': focusPointAttrW,
+      //   'data-image-h': focusPointAttrH
+      // });
 
       //Leave a sweet target reticle at the focus point.
       $('.reticle').css({ 
@@ -44,5 +57,10 @@
         'left':percentageX+'%'
       });
     });
+
+    function printDataAttr(){
+      $('.focuspointBackground').val('data-focus-x="'+focusPointAttr.x.toFixed(2)+'" data-focus-y="'+focusPointAttr.y.toFixed(2)+'" data-focus-w="'+focusPointAttr.w+'" data-focus-h="'+focusPointAttr.h+'"');
+    }
+
   });
 }(jQuery));

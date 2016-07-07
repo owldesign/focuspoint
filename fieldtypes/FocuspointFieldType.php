@@ -34,4 +34,18 @@ class FocuspointFieldType extends BaseFieldType
     ));
   }
 
+  public function getSettingsHtml()
+  {
+    return craft()->templates->render('focuspoint/fields/settings', array(
+      'settings' => $this->getSettings()
+    ));
+  }
+
+  protected function defineSettings()
+  {
+    return array(
+      'focuspointType' => array(AttributeType::String)
+    );
+  }
+
 }

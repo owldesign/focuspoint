@@ -26,7 +26,7 @@ Craft.FocuspointInput = Garnish.Base.extend(
     };
 
     numbers = ['50','50'];
-    fieldValue = this.$field.find('.focuspointCss3Background').val();
+    fieldValue = this.$field.find('.focuspointBackground').val();
     if (fieldValue) {
       numbers = fieldValue.match(/[0-9]+/g).map(function(n) {
         return +(n);

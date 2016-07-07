@@ -1,0 +1,20 @@
+{%- set options = (options is defined ? options : [
+  'Background CSS',
+  'Inline Image'
+]) %}
+
+{% import "_includes/forms" as forms %}
+<div class="field">
+  <div class="heading">
+    <label for="type">Field Type</label>
+  </div>
+  <div class="input">
+    {{ forms.select({
+      label: 'Focuspoint Type',
+      id: 'focuspointType',
+      name: 'focuspointType', 
+      options: options,
+      value: settings['focuspointType']})
+    }}
+  </div>
+</div>
