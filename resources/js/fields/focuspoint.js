@@ -32,8 +32,13 @@ Craft.FocuspointInput = Garnish.Base.extend(
     Craft.postActionRequest('focuspoint/getDefaultValues', params, $.proxy(function(response, textStatus)
     {
       var fieldHandle = response.field.model.handle;
-      var positionX = response.element[fieldHandle].positionX;
-      var positionY = response.element[fieldHandle].positionY;
+      if (response.element[fieldHandle]) {
+        var positionX = response.element[fieldHandle].positionX;
+        var positionY = response.element[fieldHandle].positionY;
+      } else {
+        var positionX = '50%';
+        var positionY = '50%';
+      }
       
       $('.reticle').css({ 
         'top': positionY,
