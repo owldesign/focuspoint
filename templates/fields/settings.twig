@@ -1,20 +1,24 @@
-{%- set options = (options is defined ? options : [
-  'Background CSS',
-  'Inline Image'
-]) %}
+{% set focuspointType = {
+  'backgroundCss': 'Background CSS',
+  'inlineImage': 'Inline Image'
+} %}
 
 {% import "_includes/forms" as forms %}
+
 <div class="field">
   <div class="heading">
-    <label for="type">Field Type</label>
+    <label for="type">Image Transform</label>
   </div>
   <div class="input">
-    {{ forms.select({
-      label: 'Focuspoint Type',
-      id: 'focuspointType',
-      name: 'focuspointType', 
-      options: options,
-      value: settings['focuspointType']})
-    }}
+    <div class="select">
+      <select id="transformType" name="transformType">
+        <option value="originalSize"{% if settings['transformType'] == 'originalSize' %} selected{% endif %}>Don't Set Transform Size</option>
+        {% for key, option in transforms %}
+          {% set optionLabel = (option.name is defined ? option.name : option) %}
+          {% set optionValue = (option.handle is defined ? option.handle : key) %}
+          <option value="{{ optionValue }}"{% if optionValue == settings['transformType'] %} selected{% endif %}>{{ optionLabel }}</option>
+        {% endfor %}
+      </select>
+    </div>
   </div>
 </div>

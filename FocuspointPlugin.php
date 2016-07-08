@@ -15,11 +15,36 @@ class FocuspointPlugin extends BasePlugin
 {
   public function init()
   {
+    parent::init();
+
     if (craft()->request->isCpRequest() && craft()->userSession->isLoggedIn()) {
+
       craft()->templates->includeCssResource('focuspoint/css/fields/focuspoint.css');
       craft()->templates->includeJsResource('focuspoint/js/focuspoint.min.js');
-      craft()->templates->includeJsResource('focuspoint/js/focuspoint.js');
       craft()->templates->includeJsResource('focuspoint/js/fields/focuspoint.js');
+
+      craft()->on('focuspoint.onSetPosition', function(Event $event) {
+        $params   = $event->params;
+        $element  = $event->params['element'];
+        $field    = $event->params['field'];
+        $fd       = $event->params['focuspointData'];
+        $fa       = $fd['focuspointAttr'];
+        $fp       = $fd['focuspointPercentage'];
+
+        $inline       = 'data-focus-x="'.$fa['x'].'" data-focus-y="'.$fa['y'].'" data-focus-w="'.$fa['w'].'" data-focus-h="'.$fa['h'].'"';
+        $background   = $fp['left'].' '.$fp['top'];
+
+        $focuspointData = [
+          'inline'      => $inline,
+          'background'  => $background,
+          'positionX'   => $fp['left'],
+          'positionY'   => $fp['top']
+        ];
+
+        $element->getContent()->setAttribute($field->handle, json_encode($focuspointData));
+        craft()->elements->saveElement($element);
+
+      });
     }
   }
   public function getName()
@@ -39,7 +64,7 @@ class FocuspointPlugin extends BasePlugin
 
   public function getReleaseFeedUrl()
   {
-    return 'https://raw.githubusercontent.com/owldesign/focuspoint/master/releases.json';
+    return 'https://raw.githubusercontent.com/roundhouse/focuspoint/master/releases.json';
   }
 
   public function getVersion()
@@ -59,7 +84,7 @@ class FocuspointPlugin extends BasePlugin
 
   public function getDeveloperUrl()
   {
-    return 'http://owl-design.net';
+    return 'http://roundhouseagency.com';
   }
 
   public function hasCpSection()

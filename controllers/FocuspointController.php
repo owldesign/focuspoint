@@ -16,4 +16,24 @@ class FocuspointController extends BaseController
       $this->returnJson($defaultValues);
     }
   }
+  
+  public function actionSavePosition()
+  {
+    $data = craft()->request->getPost();
+    $elementData = craft()->request->getPost('element');
+    $fieldName = $elementData['fieldName'];
+    $fieldId = $elementData['fieldId'];
+    $elementId = $elementData['elementId'];
+
+    $field = craft()->fields->getFieldById($fieldId);
+    $element = craft()->elements->getElementById($elementId);
+    
+    if ($element) {
+      $savePosition = craft()->focuspoint->savePosition($element, $field, $data);
+    }
+
+    $this->returnJson($savePosition);
+  }
+
+
 }
