@@ -1,18 +1,42 @@
-# Focuspoint plugin for Craft CMS
+![image](http://od-github.s3.amazonaws.com/nutshell-logo.png)
 
-![Focuspoint](http://craftcms-dev.s3.amazonaws.com/focuspoint/focuspoint.png)
+[![image](https://img.shields.io/badge/version-0.0.1-brightgreen.svg)](https://github.com/owldesign/Nutshell)
+[![image](https://img.shields.io/packagist/v/owldesign/nutshell.svg)](https://packagist.org/packages/owldesign/nutshell)
+[![image](https://img.shields.io/github/license/mashape/apistatus.svg)](http://opensource.org/licenses/MIT)
 
-Focuspoint lets you select a focal point of an image asset. 
+***
 
+Nutshell is a front-end HTML5 starter. Development is automated using GRUNT to compile SCSS and CoffeeScript files.
 
-## Installation
+<b>Whats inside:</b>
+* GRUNT
+* SCSS
+* CoffeeScript
 
-To install focuspoint, follow these steps:
+***
 
-1. Download & unzip the file and place the `focuspoint` directory into your `craft/plugins` directory
-2.  -OR- do a `git clone https://github.com/roundhouse/focuspoint.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
-3. Install plugin in the Craft Control Panel under Settings > Plugins
-4. The plugin folder should be named `focuspoint` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
-5. Currently only supports css background images (no <img> tag focuspoints, but will add later).
+<b>Usage:</b>
 
-focuspoint works on Craft Craft 2.5.x.
+* Clone the repo, go to your project directory and run ```npm install```. This will install all the GRUNT dependencies.
+* In your terminal run ```grunt``` to compile your SCSS and CoffeeScript files.
+* Open the project in your favorite editor and you are set to go!
+
+***
+
+<b>Development Assets</b><br />
+You will find all the appropriate development files inside ```dev``` folder. For styles look inside ```scss``` folder. Everything is broken into different files and are imported into ```application.scss```. If you need to add javascript code pop open ```coffee/application.coffee``` file.
+
+<b>JavaScript Libraries</b>
+* If you have 3rd party JavaScript libraries you want to use, you should minify and paste the code into ```app/js/plugins.js```. Place other files into ```app/js/lib``` directory and update your ```app/index.html``` file.
+
+<b>CSS Libraries</b>
+* If you're using some type of JavaScript library that has default/required CSS styles. You can drop that into ```app/css/plugins.css```.
+
+***
+
+<b>Production Assets</b><br />
+All production files are located in the ```app``` directory. Upload all the contents inside the ```app``` directory to your webhost.
+
+***
+
+### Happy Coding

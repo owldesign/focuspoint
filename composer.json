@@ -1,0 +1,15 @@
+{
+  "name": "owldesign/nutshell",
+  "description": "Frontend framework for jumpstarting HTML5 projects | Grunt + Coffee + SCSS",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vadim Goncharov",
+      "email": "vadim@owl-design.net",
+      "homepage": "http://owl-design.net",
+      "role": "Developer"
+    }
+  ],
+  "type": "html5-starter",
+  "require": {}
+}

@@ -1,0 +1,16 @@
+/* ============================================ *
+ * Forms
+ * ============================================ */
+
+#{$all-text-inputs} {
+  border: 1px solid #f00;
+}
+
+#{$all-text-inputs-focus},
+#{$all-text-inputs-hover} {
+  border: 1px solid #0f0;
+}
+
+#{$all-text-inputs-active} {
+  border: 1px solid #00f;
+}

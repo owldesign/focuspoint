@@ -1,0 +1,30 @@
+/* ============================================ *
+ * Responsive
+ * ============================================ */
+ 
+//
+// Available Variables (_variables.scss)
+// $max-width: 960px;
+// $desktop: 960px;
+// $tablet: 767px;
+// $mobile: 479px;
+// 
+// Usage:
+//   @include bp(min-width, $desktop) { } 
+//   @include bp(max-width, $tablet) { } 
+
+
+// Desktop 
+@include bp(min-width, $desktop) {
+
+} 
+
+// Tablet
+@include bp(min-width, $tablet) {
+
+} 
+
+// Tablet
+@include bp(min-width, $mobile) {
+
+} 
