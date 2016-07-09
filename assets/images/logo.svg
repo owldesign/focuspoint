@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>logo</title>
+  <g id="frame">
+    <path class="cls-1" d="M60,54a2,2,0,0,1-2,2H50v4H60a4,4,0,0,0,4-4V48H60ZM4,54V48H0v8a4,4,0,0,0,4,4H14V56H6A2,2,0,0,1,4,54ZM60,0H4A4,4,0,0,0,0,4v8H4V6A2,2,0,0,1,6,4h8V0H50V4h8a2,2,0,0,1,2,2v6h4V4A4,4,0,0,0,60,0Z"/>
+  </g>
+  <g id="circles">
+    <path class="cls-1" d="M36,14.52V18.7A12,12,0,0,1,36,41.3v4.17a16,16,0,0,0,0-31ZM16,30A16,16,0,0,0,28,45.48V41.3A12,12,0,0,1,28,18.7V14.52A16,16,0,0,0,16,30Z"/>
+  </g>
+  <g id="dot">
+    <circle class="cls-1" cx="32" cy="30" r="4"/>
+  </g>
+</svg>

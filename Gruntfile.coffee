@@ -13,7 +13,7 @@ module.exports = (grunt) ->
     # =============================================
     ScssDirectory: 'dev/scss'
     CoffeeDirectory: 'dev/coffee'
-    DistributionDirectory: 'app/assets'
+    DistributionDirectory: 'assets'
 
     # =============================================
     # WATCH FOR CHANGE

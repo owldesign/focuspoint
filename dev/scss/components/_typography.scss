@@ -1,15 +1,18 @@
-/* ============================================ *
- * Typography
- * ============================================ */
+// ==========================================================================
+// ★ FONTS★
+// ========================================================================== 
+@include font-face("thin", "../fonts/thin", $file-formats: eot svg ttf woff);
+@include font-face("light", "../fonts/light", $file-formats: eot svg ttf woff);
+@include font-face("lightitalic", "../fonts/lightitalic", $file-formats: eot svg ttf woff);
+@include font-face("bold", "../fonts/bold", $file-formats: eot svg ttf woff);
 
-// Bourbon Font Stacks
-// font-family: $georgia;
-// font-family: $helvetica;
-// font-family: $lucida-grande;
-// font-family: $monospace;
-// font-family: $verdana;
+$font-thin: 'thin', Helvetica, arial;
+$font-light: 'light', Helvetica, arial;
+$font-lightitalic: 'lightitalic', Helvetica, arial;
+$font-bold: 'bold', Helvetica, arial;
 
-// Variables
-$f-size: 16px;
-$f-lh: 1;
-
+// Misc
+span,h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  @include antialias();
+}
