@@ -11,12 +11,6 @@
 </div>
 <div class="spinner-wraper"><div class="spinner hidden"></div></div>
 
-{{ forms.text({
-  name: name,
-  class: 'focuspointBackground' ~ ' ' ~ transformType,
-  value: value
-}) }}
-
 {% includejs %}
   new Craft.FocuspointInput(
     "{{ id|namespaceInputId|e('js') }}",

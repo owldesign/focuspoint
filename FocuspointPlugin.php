@@ -69,7 +69,7 @@ class FocuspointPlugin extends BasePlugin
 
   public function getVersion()
   {
-    return '0.0.1';
+    return '1.0.2';
   }
   
   public function getSchemaVersion()

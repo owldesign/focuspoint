@@ -25,14 +25,16 @@ class FocuspointFieldType extends BaseFieldType
 
   public function getInputHtml($name, $value)
   {
-    return craft()->templates->render('focuspoint/fields/focuspoint', array(
+
+    $variables = [
       'settings'  => $this->getSettings(),
       'id'        => craft()->templates->formatInputId($name),
       'name'      => $name,
       'value'     => $value,
       'fieldId'   => $this->model->id,
       'elementId' => $this->element->id,
-    ));
+    ];
+    return craft()->templates->render('focuspoint/fields/focuspoint', $variables);
   }
 
   public function getSettingsHtml()
