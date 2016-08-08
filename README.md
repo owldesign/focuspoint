@@ -1,5 +1,3 @@
-# Focuspoint plugin for Craft CMS
-
 ![Screenshot](resources/screenshots/plugin_logo.png)
 
 Focuspoint lets you select a focal point of an image asset. 
