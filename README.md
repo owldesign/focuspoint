@@ -19,7 +19,7 @@ Here is what you have access to:
 * `image.[fieldHandleName].positionY`
 	* 50% 
 
-`[fieldHandleName]` - repace this with your own asset field handle name.
+`[fieldHandleName]` - repace this with Focuspoint field handle name.
 
 
 ##### For css background positions
