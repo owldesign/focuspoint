@@ -1,18 +1,54 @@
 # Focuspoint plugin for Craft CMS
 
-![Focuspoint](http://craftcms-dev.s3.amazonaws.com/focuspoint/focuspoint.png)
+![Screenshot](resources/screenshots/plugin_logo.png)
 
 Focuspoint lets you select a focal point of an image asset. 
 
 
-## Installation
+## Usage Example
 
-To install focuspoint, follow these steps:
+Create a field using `Focuspoint` Field Type. Attached that field to your Field Layout in the Asset Sources.
 
-1. Download & unzip the file and place the `focuspoint` directory into your `craft/plugins` directory
-2.  -OR- do a `git clone https://github.com/roundhouse/focuspoint.git` directly into your `craft/plugins` folder.  You can then update it with `git pull`
-3. Install plugin in the Craft Control Panel under Settings > Plugins
-4. The plugin folder should be named `focuspoint` for Craft to see it.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
-5. Currently only supports css background images (no <img> tag focuspoints, but will add later).
 
-focuspoint works on Craft Craft 2.5.x.
+Here is what you have access to:
+
+* `image.[fieldHandleName].inline` 
+	* data-focus-x="0.5" data-focus-y="-0.1" data-focus-w="600" data-focus-h="400"
+* `image.[fieldHandleName].background` 
+	* 50% 50%
+* `image.[fieldHandleName].positionX`
+	* 50% 
+* `image.[fieldHandleName].positionY`
+	* 50% 
+
+`[fieldHandleName]` - repace this with your own asset field handle name.
+
+
+##### For css background positions
+
+```
+ {% set image = entry.image.first() %}
+ <div style="background-position: {{ image.[fieldHandleName].background }};"></div>
+
+```
+
+##### For inline images using data attributes
+
+```
+{% set image = entry.image.first() %}
+ <div {{ image.[fieldHandleName].inline |raw }}>
+	<img src="{{ image.getUrl('large') }}">
+ </div>
+```
+
+##### Using with Imager plugin
+
+```
+{% set image = entry.image.first() %}
+{% set transformedImage = craft.imager.transformImage(image, {
+    width: 800,
+    mode: 'crop',
+    position: image.[fieldHandleName].background
+}) %}
+<img src="{{ transformedImage.url }}">
+```
